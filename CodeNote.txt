@@ -1,0 +1,21 @@
+Preprocessing with specific Visualization
+1.feature check with figure
+2.outlier check
+3.onehot ancoding
+4.numerical feature like-BMI, scaling (Standard scaler)
+5.feature Engineering
+6.feature Selection(18 all fearture is not necessary)specific feature-important
+married, not-married, for numeric dataset-2 process-1.RAfeee10ta, Lesso8ta,Mutual information(MI)-commonn feature
+
+7.if imbalance(adasin,SMOTE)
+
+Model Training
+
+8.SVM,LR,GBoosting,XGBoost,8/10
+9.pivort cross validation(5/10)cross value ->solve overfitting issue
+10.apply new ML model-unique (MLP)
+11.evalution Matrix- F1 score
+12.Ensemble Learning-> XGBboost50%-RF30%,-SVM20%-tuning
+13.Hybrid 
+14.Explainable AI(explainer)XI
+15.lime
