@@ -1,0 +1,25 @@
+1. Importing Required Libraries
+2. Load and Explore 3 Dataset
+3. Data Preprocessing
+4. EDA (Exploratory Data Analysis)
+5. Handling Class Imbalance with Random over sampling
+6. Train-Test Split
+7. Model Implementation using Ml(SVM,LR,RF,Naive biase,MLP,Extra trees,GB,XGB,catBoost,lightBGM,)->building, tuning, and evaluating classification models[Hyperparameter Tuning: Systematically searching for the best combination of model
+ parameters using Grid Search.
+
+Cross-Validation: Using K-Fold Cross-Validation (specifically, 5-fold) during grid search to get a more reliable estimate of model performance and prevent overfitting.]
+8. Model Evaluation Metrics ->Utilizing a comprehensive set of metrics beyond just accuracy to assess model performance, especially in imbalanced datasets.
+9. Visualization
+10. Explainability (XAI) 
+11. Conclusion & Comparison
+
+
+
+how model build?
+
+None of the models in your code explicitly use class weighting, which can be important for imbalanced datasets. However, some models like XGBoost and LightGBM 
+have built-in mechanisms to handle imbalanced data, and you can adjust these settings if needed.
+Overall, your code covers a broad range of techniques for building, tuning, and evaluating classification models. For further enhancement, consider exploring 
+ensemble methods, adjusting for class imbalance more explicitly, or experimenting with feature engineering and selection techniques.
+
+

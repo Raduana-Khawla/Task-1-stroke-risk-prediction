@@ -1,0 +1,139 @@
+=== Logistic Regression ===
+Accuracy: 0.8410
+Precision: 0.8450
+Recall: 0.8352
+F1 Score: 0.8401
+Specificity: 0.8467
+TPR: 0.8352
+FPR: 0.1533
+CSI: 0.7243
+MAE: 0.2395
+MSE: 0.1110
+RMSE: 0.3332
+AUC-ROC: 0.9214
+
+=== Random Forest ===
+Accuracy: 1.0000
+Precision: 1.0000
+Recall: 1.0000
+F1 Score: 1.0000
+Specificity: 1.0000
+TPR: 1.0000
+FPR: 0.0000
+CSI: 1.0000
+MAE: 0.0484
+MSE: 0.0065
+RMSE: 0.0808
+AUC-ROC: 1.0000
+
+=== SVM ===
+Accuracy: 1.0000
+Precision: 1.0000
+Recall: 1.0000
+F1 Score: 1.0000
+Specificity: 1.0000
+TPR: 1.0000
+FPR: 0.0000
+CSI: 1.0000
+MAE: 0.0003
+MSE: 0.0000
+RMSE: 0.0004
+AUC-ROC: 1.0000
+
+=== Naive Bayes ===
+Accuracy: 0.6080
+Precision: 0.6029
+Recall: 0.6300
+F1 Score: 0.6161
+Specificity: 0.5860
+TPR: 0.6300
+FPR: 0.4140
+CSI: 0.4452
+MAE: 0.4549
+MSE: 0.2385
+RMSE: 0.4884
+AUC-ROC: 0.6434
+
+=== Extra Trees ===
+Accuracy: 1.0000
+Precision: 1.0000
+Recall: 1.0000
+F1 Score: 1.0000
+Specificity: 1.0000
+TPR: 1.0000
+FPR: 0.0000
+CSI: 1.0000
+MAE: 0.0313
+MSE: 0.0027
+RMSE: 0.0524
+AUC-ROC: 1.0000
+
+=== XGBoost ===
+Accuracy: 0.9988
+Precision: 0.9975
+Recall: 1.0000
+F1 Score: 0.9988
+Specificity: 0.9975
+TPR: 1.0000
+FPR: 0.0025
+CSI: 0.9975
+MAE: 0.0233
+MSE: 0.0034
+RMSE: 0.0585
+AUC-ROC: 1.0000
+
+=== Gradient Boosting ===
+Accuracy: 0.9975
+Precision: 0.9950
+Recall: 1.0000
+F1 Score: 0.9975
+Specificity: 0.9950
+TPR: 1.0000
+FPR: 0.0050
+CSI: 0.9950
+MAE: 0.0112
+MSE: 0.0017
+RMSE: 0.0413
+AUC-ROC: 1.0000
+
+[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.500000 -> initscore=0.000000
+Accuracy: 0.9579
+Precision: 0.9918
+Recall: 0.9234
+F1 Score: 0.9563
+Specificity: 0.9923
+TPR: 0.9234
+FPR: 0.0077
+CSI: 0.9163
+MAE: 0.0570
+MSE: 0.0313
+RMSE: 0.1769
+AUC-ROC: 0.9859
+
+=== CatBoost ===
+Accuracy: 0.9770
+Precision: 0.9921
+Recall: 0.9617
+F1 Score: 0.9767
+Specificity: 0.9923
+TPR: 0.9617
+FPR: 0.0077
+CSI: 0.9544
+MAE: 0.0636
+MSE: 0.0236
+RMSE: 0.1536
+AUC-ROC: 0.9842
+
+=== MLP (Neural Network) ===
+Accuracy: 0.7471
+Precision: 0.7087
+Recall: 0.8391
+F1 Score: 0.7684
+Specificity: 0.6552
+TPR: 0.8391
+FPR: 0.3448
+CSI: 0.6239
+MAE: 0.3002
+MSE: 0.1661
+RMSE: 0.4075
+AUC-ROC: 0.8463

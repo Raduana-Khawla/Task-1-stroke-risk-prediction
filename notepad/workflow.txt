@@ -1,0 +1,44 @@
+[ Start with Full Dataset ]
+           |
+           v
+[ Step 1: Preprocess & Clean Data ]
+           |
+           v
+[ Step 2: Split Data into: ]
+       ┌─────────────┐
+       │ 80% Training│
+       └────┬────────┘
+            │
+            ▼
+       ┌─────────────┐
+       │ 20% Testing │
+       └─────────────┘
+
+           ▼
+[ Step 3: Train Model on Training Set ]
+           |
+           ▼
+[ Step 4: Predict on Training Set ]
+           |
+           ▼
+[ 📉 Calculate "Training Error" using metrics like MSE, MAE, R² ]
+
+           ▼
+[ Step 5: Predict on Testing Set ]
+           |
+           ▼
+[ 📉 Calculate "Test Error" using same metrics ]
+
+           ▼
+[ Step 6: Compare Errors ]
+       ┌───────────────────────────────────────────┐
+       │ Train Error ≈ Test Error → Good Fit ✅     │
+       │ Train Low, Test High → Overfitting ⚠️     │
+       │ Train High, Test High → Underfitting ⚠️   │
+       └───────────────────────────────────────────┘
+
+           ▼
+[ Step 7: Improve Model Based on Diagnosis ]
+           |
+           ▼
+[ End ]

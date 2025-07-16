@@ -1,0 +1,15 @@
+Literature Review 
+
+2024,2025 - 15ta paper
+
+author,dataset,process,models,result,limitations 2/3 lines; future work 2/3 lines,
+author,work/implecations,acc,limitations-2/3 line
+
+1.Recent 15 papers-table (link)-
+
+paper-method,abstract,result,conclusition
+
+Springer,IEEE,Insphir,Scienceb, with 8star conferrence
+
+AI tools->grok,gpt,deepseek
+how write

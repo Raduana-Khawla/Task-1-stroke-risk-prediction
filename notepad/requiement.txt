@@ -1,0 +1,40 @@
+1)15paper -(23-25)-iEE,Spriner,Gournal,conferrence,south ashia, same as framework
+2)2.5line->2/3/3.5 
+
+online search
+"give me this informations from this paper'1st sentence->proposd model/framework/Accuracy/F1score/implication 
+2nd sentence->limitations, if overfitting 'shortly with paragraph shortly"
+
+
+  1st sentence->proposd model/framework/acc/F1score/implication (at all[citation]), 
+  2nd sentence->limitations,overfitting hole (framework same hole->ak sathe->khawla at al also hasib at all also)
+
+(same extra kisu thakle paragraph)
+
+3) 1 line->i say before for limitations,  for this we propose a framework,and for this framework, we work like this.we analysis,and 
+compare,that which dataset and which model better,with this framework we reduce limitations dur korsi.
+
+Introductions:
+1.problem ta ki,
+2.problem ta nia research hocche, but also have limitations 1line
++(for this problem  we apply our framework so mitigate problem.2/3sentence)
+key contributions:
+1.we find models with 3dataset,evalution matrix,
+2.we apply preprosing,balance technique,
+3.we use clear value,representations XAI 
+
+
+1)recent data 25/24(statistical)analysis ,problemfor strock prediction, koto manush mara jacche
+2)for this problem ,kaj hocche, ter por o limitations thake, (1 line), but we apply our framework
+so mitigate problem.
+
+
+
+
+Key contributions include:
+\begin{itemize}
+    \item A BLSTM framework for precise trajectory prediction.
+    \item A DBSCAN-KNN pipeline to improve AIS data quality.
+    \item Validation showing superior performance over existing methods.
+    \item Support for collision avoidance and sustainable maritime operations.
+\end{itemize}

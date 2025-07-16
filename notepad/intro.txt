@@ -1,0 +1,675 @@
+Stroke is one of the most common and devastating disorders, a leading cause 
+of disability, and the second leading cause of death worldwide cause, with 
+approximately 5.5 million deaths worldwide in 2015. Numerous advances 
+have been made in understanding cerebrovascular diseases in recent years, 
+but scientific research can still provide many improvements. Indeed, many 
+steps remain to better characterize pathogenesis at the molecular level, 
+identify risk profiles, prognostic stratification, and personalize treatment. 
+Nevertheless, the significant advances in technology, which are increasingly 
+beginning to have a place in the most modern approach to medicine, and the 
+better knowledge of the pathophysiology of stroke open up new prospects for 
+the development timing-based instrumental approach (Feigin et al., 2022). 
+Machine learning (ML) techniques have gained recognition in stroke medicine 
+as valuable tools. They allow for the adequate examination of extensive 
+datasets and support personalized and precise medical approaches. This 
+summary thoroughly examines ML’s applications, obstacles, and future 
+prospects in stroke medicine. ML algorithms that have been introduced 
+recently are being widely utilized across various aspects of stroke medicine. 
+These models have exhibited impressive precision in analyzing medical 
+images, identifying different stroke subtypes, stratifying risks, aiding medical 
+treatment decisions, and predicting patient outcomes. 
+The objective of this review is to consolidate the existing applications of 
+machine learning in stroke diagnosis, treatment, and prognostic evaluation. 
+Additionally, this paper seeks to investigate the potential avenues these 
+techniques offer to address this debilitating condition.Stroke is a universal health problem, and its impact is high
+on the scale of morbidity, mortality, and economic burden.
+The efficiency of stroke recovery is highly dependent on
+the prompt and accurate identification of stroke indicators However, current technical methods of early diagnosis from
+facial images require specialized equipment and expert interpretation. Previous studies have applied machine learning
+techniques to this problem with varying degrees of success,
+but challenges remain in optimizing both the accuracy and
+interpretability of these models.
+Stroke death rate elevated from 38.8 per 100,000 people in
+2020 to 41.1 per 100,000 in 2021, according to a survey by the Center for Disease Control and Prevention [1]. Ischemic
+stroke affects 15 million people worldwide and financial and
+mental costs are high on families and communities, as stated
+in a report by the World Health Organization (WHO) of
+Eastern Mediterranean region [2]. Moreover, Close to 34% of
+global healthcare expenditure is spent on stroke [3]. In spite
+of the advancements in the medical field, early recognition of
+ischemic stroke remains challenging, particularly in remote
+or under-resourced areas.
+Stroke detection systems currently use Computed Tomography (CT) and Magnetic Resonance Imaging (MRI) scans
+but both can be expensive, time consuming and they might
+not be available in certain regions [4]. This issue is addressed
+in the proposed system which does so by analyzing facial
+images for asymmetries and other stroke related facial
+attributes in real time with the help of machine learning
+algorithms for facial landmark detection. It combines MediaPipe [5], which is a reliable facial landmark detection
+system, to extract facial landmarks. This approach not only
+decreases the cost of imaging devices but also enables quick,
+on-the-spot screening.
+Three sophisticated machine learning classification algorithms: Random Forest(RF), Extreme Gradient Boosting(XGB), and Catagorical Boosting(CB). The effectiveness
+of these models in detecting stroke symptoms based on facial
+features is thoroughly assessed.
+This paper introduces a novel approach to diagnosing
+facial palsy through the application of machine learning and
+computer vision techniques. Our primary contributions are as
+follows Comprehensive Dataset Collection and Augmentation: A diverse dataset of 1000 facial images (500
+with stroke symptoms, 500 without) is curated from
+publicly available sources, ensuring a balance between
+positive and negative cases. The models are made robust
+by applying data augmentation techniques: rotation,
+flipping, and scaling. The dataset is expanded in size
+to strengthen the model’s capability to pick out subtle
+stroke signs for other disparate demographic groups.
+• Advanced Facial Landmark Extraction: Using MediaPipe Face Mesh, 228 key facial landmarks are
+selected out of the available 468 by focusing on
+regions most indicative of stroke or facial palsy-related
+anomalies. This refined method aims to minimize
+computational overhead while maximizing diagnostic
+relevance, by isolating those face areas indicated for
+stroke: asymmetry or drooping [6].
+• Intense Model Optimization Techniques: The baseline models are thoroughly optimized using Ray Tune,
+Randomized Search, and Grid search in order to find
+the best performing hyperparameters. In particular, these
+techniques are use iteratively and are additionally fine
+tuned through manual calibration, post optimization.
+This leads to more performance and stability.
+• Multimodal Voting Classifier: Through combining
+the strengths of RF, XGB, and CB models, a robust Multimodal Voting Classifier (MVC) is created. This
+ensemble technique improves predictive performance by
+utilizing the best features of each model, which lead to
+increased accuracy and reliability in stroke detection.
+• Performance Evaluation and Validation: The model
+goes through intense testing across various datasets. Its
+effectiveness is validated by key performance indicators
+such as accuracy sensitivity and specificity.
+• Explainable AI (XAI) Integration: By emphasizing
+the importance of particular face regions in stroke
+detection, XAI approaches offer transparency and
+enable medical practitioners to validate the model’s
+conclusions. Feature importance techniques for RF,
+XGB, and CB further refine the model by identifying
+the most effective facial landmarks.
+• Dimensionality Reduction using t-SNE: t-Distributed
+Stochastic Neighbor Embedding (t-SNE) is employed
+for dimensionality reduction and visualization of highdimensional data. This technique facilitates the interpretation of complex datasets and enhances the clarity of the
+classification process.
+• Real-time Performance of the model: Real-time
+performance evaluation is important for evaluating
+the robustness of machine learning models in clinical
+contexts. In the study, Python based Graphical User
+Interface(GUI) is used to deploy the proposed MVC in
+a python application to process user input images to
+diagnose stroke while measuring different performance
+metrics such as the preprocessing time, inference time,
+and the total time taken. By testing on a range of
+hardware systems, the analysis highlights the model’s
+adaptability, efficiency, and feasibility for the implementation into real-world workflows, ensuring reliability in
+time-sensitive scenarios.
+The rest of the paper is organized as follows: Section II
+presents the literature review, Section III details the methodology, Section IV includes the experimental results analysis,
+section V describes the discussion of the study and finally,
+section VI concludes the results. Stroke, particularly acute ischemic stroke (AIS), continues to 
+be a major contributor to morbidity and mortality globally, 
+placing a substantial burden on healthcare systems [1]. A 
+critical complication following AIS is hemorrhagic transformation (HT), wherein ischemic brain tissue undergoes 
+secondary bleeding. This process exacerbates neurological 
+defcits and elevates the risk of mortality [2]. This complication typically occurs following the reperfusion of cerebral 
+tissue, often due to thrombolytic therapies [3]. Therefore, accurate prediction of HT is crucial for optimizing therapeutic strategies and enhancing patient outcomes.
+The integration of artifcial intelligence (AI) into medical 
+research holds the potential to revolutionize the prediction 
+and management of stroke outcomes. Over the years, AI has 
+evolved signifcantly, transitioning from early rule-based systems to advanced machine learning (ML) and deep learning 
+(DL) algorithms [4]. AI encompasses the development of algorithms and computational models that mimic human cognitive 
+functions. Within AI, ML, and DL have emerged as powerful 
+tools in medical research, ofering the capability to analyze 
+vast amounts of data and identify patterns that traditional statistical methods may overlook [5]. Predictive models in stroke 
+medicine are designed to estimate the risk of complications 
+such as HT based on various patient-specifc factors. Traditional models have relied on clinical, radiological, and laboratory data; however, their predictive accuracy is ofte by the complexity and heterogeneity of stroke presentations. 
+This limitation underscores the need for more sophisticated 
+approaches capable of handling multifaceted data and extracting meaningful patterns. Examples of such scoring systems 
+include the Hemorrhage After Thrombolysis (HAT) score, the 
+Safe Implementation of Treatments in Stroke Symptomatic 
+Intracerebral Hemorrhage (SITS-SICH) risk score, and the 
+Stroke Prognostication using Age and National Institutes of 
+Health Stroke Scale-100 index (SPAN-100) [6].
+ML, a subset of AI, focuses on developing algorithms that 
+can learn from data and make predictions or decisions without 
+being explicitly programmed. ML techniques, such as support vector machines (SVM), random forests (RF), and logistic 
+regression, have been extensively applied in medical research 
+to predict clinical outcomes. These algorithms excel in supervised learning scenarios where labeled data is available for 
+training [5].
+DL, which falls under the broader category of ML, utilizes 
+a layered approach to analyze and learn from data [7]. This 
+enables it to identify intricate patterns and relationships within 
+datasets. Convolutional neural networks (CNNs) and recurrent 
+neural networks (RNNs) are prominent DL architectures. CNN 
+has proven to be especially efective in the analysis of medical 
+images and shows great potential in making clinical predictions based on imaging data [8]. RNNs are adept at handling 
+sequential data, making them suitable for time-series prediction tasks such as monitoring patient vital signs [9].
+Recent studies have shown a marked increase in the application of these algorithms in areas such as stroke research 
+[10, 11]. ML has been particularly successful in predicting 
+HT, as evidenced by various studies [12].
+Considering the life-threatening consequences of HT 
+after AIS, and the emergence of numerous ML and DL tools 
+designed to predict the risk of HT based on diferent inputs 
+this study aims to systematically review and evaluate these 
+predictive models. Our review will focus on comparing the 
+efcacy of these algorithms and, where feasible, benchmark 
+them against existing scoring systems. This comparison will 
+not only highlight the potential of ML and DL to enhance 
+predictive accuracy but also identify areas where these technologies could be refned for better integration into clinical 
+workfows. Ultimately, our review endeavors to underscore 
+the signifcance of leveraging cutting-edge technologies to 
+improve patient outcomes in AIS, setting the stage for future 
+innovations in stroke management.Stroke remains a critical global health concern, ranking as the 
+second-leading cause of death and the third-leading cause of death and 
+disability combined, with mortality rates rising particularly in developing nations.1 Annually, 13.7 million new stroke cases are reported, 
+leading to approximately 5.5 million deaths.2 The outcome of a stroke is 
+significantly influenced by post-stroke complications, including 
+mobility-related falls, urinary tract infections (UTIs), pneumonia, and 
+psychological conditions.3,4 Among these, infections are prevalent in the 
+acute phase of stroke, with stroke-associated pneumonia affecting 5–44 
+% of stroke patients and serving as a major independent risk factor for poor outcomes and increased mortality.5–7
+Stroke patients face an elevated risk of hospital-acquired pneumonia 
+(HAP) due to factors such as stroke-induced immunodepression, the 
+severity of the stroke, advanced age, ICU admission, pre-stroke 
+disability, and dysphagia.8–10 HAP, commonly caused by pathogens 
+such as Enterobacteriaceae, Staphylococcus aureus, and Pseudomonas 
+aeruginosa,11 is often linked to aspiration and impaired reflexes 
+following a stroke.12,13 It contributes to poorer functional outcomes, 
+increased mortality within the first-year post-stroke, and prolonged 
+hospital stays.14,15 Preventing pneumonia is, therefore, essential for 
+improving patient outcomes. Recent predictive methods, including the 
+A2DS2 score combined with fasting hyperglycemia, neutrophil-to-lymphocyte ratio (NLR), and biomarkers like transthyretin levels and neutrophil percentage to albumin ratio (NPAR), have 
+demonstrated effectiveness in early HAP prediction.7,16–18
+Advancements in machine learning (ML) and the widespread adoption of electronic health records (EHR) have enhanced the development 
+of predictive models for healthcare applications, including store management. ML models, such as the XGBoost model, have proven particularly efficient in predicting HAP among ischemic stroke patients. 
+Building on these advancements, this study seeks to develop a robust ML 
+model for the early prediction of HAP in stroke patients, addressing the 
+urgent need for preventive measures and improved clinical 
+outcomes.19–22
+Driven by advancements in machine learning models in healthcare 
+and the need for early prediction and prevention of HAP in stroke patients, our study aims to develop a machine learning model to predict 
+HAP early on We must employ technology as it develops in fields like healthcare to address pressing issues. Strokes were unity 
+of the furthermost recurrent reasons of demise in former years, Due to their effects on the human central nervous 
+system. We can utilize deep learning algorithms to detect stroke in its early phases in order to address problems 
+like stroke. Therefore, the death rate from strokes can be decreased with sophisticated picture recognition and 
+categorization. The Prediction model is used in this study to predict stroke risk in older individuals and those who 
+are at increased risk of stroke due to a variety of variables, such as addiction. The same project may be expanded 
+in the future to provide the stroke percentage based on project output.[1] Due to its exceptional lenient material 
+divergence, the MRI has converted the mode of optimal for medical appraisal of ischemic stroke abrasions. Aimed 
+at quantitative scrutiny of stroke laceration in MRI metaphors, skillful physical dissection tranquil assists as 
+mutual tactic to total the dimensions, figures and bulks of stroke abrasions. Though, it is monotonous and time
+consuming chore and is non-reproducible. Consequently, the expansion of abundantly auto- mated and precise 
+stroke abrasion dissection procedures partakes converted vigorous examine field.[2] Stroke is predictable as an 
+important cerebrovascular ailment, foremost to the second main feature of infirmity and demise wide-reaching, 
+which occasioned in a universal significant pecuniary drain (roughly 34 billion dollars per year). Stroke can be 
+alienated hooked on ischemic stroke (which described for more than 87% of all stroke affected role) and 
+hemorrhagic stroke. The period space for giving stroke ailment action in the critical stage is mostly 6 hours after 
+inception. Consequently, it entails speedy verdicts and suitable interferences from clinicians Neuroimaging 
+procedures (counting CT and MRI) have converted vital tactic to critical stroke discovery, depiction, and 
+prognosis. [3] Cerebral aneurysms are bulges in cerebral blood vessels that can leak or rupture, causing 
+subarachnoid hemorrhage (SAH). An unruptured intracranial aneurism is an abnormal focal expansion of an artery 
+in the brain caused by the weakening of the vascular wall. Approximately 3% of healthy adults have an intracranial 
+aneurysm1. Aneurysms account for 85% of all SAHs, with an average mortality rate of 51%, and one-third of 
+survivors have long-term disabilities[4], The Introduction Procedures that integrate quantifiable scrutinizes will 
+add to the outdated pictorial scrutiny of metaphors. An imperative phase in the doppelgänger examination channel 
+is the functional dissection of regions of interest, for example, significant a bulk of irregular material from a 
+contextual of regular material. This will permit for numerical scrutiny of topographies that is non noticeable by 
+humanoid perception. For example, the arena of radiomics is reckless rising as a technique of envisaging existence periods from tomography structures such as figure of a bulk of attention and quality and passion of the voxel 
+environment. With the expansion of these procedures comes a superior need for computerized segmentation.[5]"write introduction with recent informatons according to 2025 papers"
+Heart disease includes a number of disorders that affect the heart. Heart disorders include conditions such as blood vessel disease, namely coronary artery disease. Cardiac arrhythmias Congenital heart defects refer to cardiac disorders that are present from birth [1]. Every year, 17.9
+million people die from cardiovascular illnesses (CVDs) [2]. Coronary heart disease cerebrovascular disease, rheumatic heart disease, and other illnesses are among the categories
+of heart and blood vessel disorders known as CVDs. Heart attacks and strokes account for
+more than four out of five CVD fatalities, and one-third of these deaths occur under the age of
+70 [2]. Heart disease and stroke are the primary causes of CVDs, which kill 23.6 million people
+by 2030 [3].
+WHO acknowledges that strokes are responsible for a significant number of deaths globally.
+Strokes cause most deaths and disabilities in low- and middle-income nations[4]. Healthy habits and better healthcare are essential to preventing strokes [5]. The main risk factors for heart
+disease in high-income nations are high blood pressure, high cholesterol, smoking, obesity, a
+lack of activity, poor diet, excessive alcohol use, diabetes, family history, age and gender, stress,
+and environmental factors [6]. On the other hand, long-term illnesses like heart disease are rising in nations with low or middle incomes. Changing diets, sedentary lifestyles, smoking, and
+poor healthcare access contribute to this global health concern[7]. Early stroke detection can
+save mortality in 85% of instances [5].
+Healthcare is now cost-effective because of technology. Each artificial intelligence algorithm
+improves healthcare automation and disease prediction. Massive amounts of information are
+successfully analyzed and stored in the cloud using Hadoop, a system built on computer clusters [8–10]. Many applications, like text recognition and identification, early forecasting
+[11,12], power quality disturbance detection[13], vehicle categorization, and agriculture, focus
+significantly on machine learning. When using modern tools to anticipate and diagnose cardiac illnesses, physicians tend to depend on their assessments of a patient’s medical history,
+symptoms, and outcomes from physical examinations. Patient data, primarily medical records,
+is easily accessible and constantly growing in today’s healthcare sector databases. To developing a prediction model for heart disease, this research analyzed the Stroke Prediction Dataset.
+The dataset’s existing characteristics have been used to train the machine to identify patterns.
+Bhatt et al,. [6] RF, DT, MP, and XGBoost. GridSearchCV hyper tuned model parameters
+to maximize results. DT: 86.37% (with cross-validation) and 86.53% (without), XGBoost:
+86.87% and 87.02%, RF: 87.05% and 86.92%, multilayer perceptron: 87.28% and 86.94%,
+trained on 80:20 data split. This study found that multilayer perception with cross-validation is
+most accurate. Its greatest accuracy was 87.28%. In this study, the accuracy is not up to the
+mark. Erdoğan and Gu¨ney [14] proposed a technique for calculating the weight coefficient.
+The findings of the suggested technique show that 13 distinct patient characteristics led to an
+SVM: 86,90% success rate.
+Given that heart disease is a serious health issue, it is essential to inform people about its
+risks and ways to prevent it. Men are more likely than women to get heart disease, according
+to statistics from Harvard Health Publishing [15], and this gap persists even after taking into
+account known risk factors. Several variables may cause a gender difference in the risk of getting heart disease, including: lifestyle decisions, biological and genetic factors, knowledge of
+the issue and seeking treatment, as well as changes in hormone levels [16].
+In this century, machine learning has become accepted as a method for assessing data pertaining to illnesses. This paper will focus on the most efficient method for employing machine
+learning techniques in the early identification of heart disease in order to provide a solution.
+The following actions have been taken to conduct more simulations:
+• Processing the data to make the dataset prepared for analysis.
+• Utilization of data preparation methods to improve and clean the dataset.
+• Nine alternative models have been used for analyzing the dataset.
+• Performance evaluation of different models to determine the one that performs the best • Assessment of the performance of the best model in comparison to previous research.
+The research is divided into the following sections: introduction, related work, methodology, data collection, data conversion, and data preprocessing, applied models, result analysis,
+discussion, comparison with previous research, summary, and future scope. The section that
+follows offers a little more explanation in light of this.Stroke, particularly acute ischemic stroke (AIS), continues to 
+be a major contributor to morbidity and mortality globally, 
+placing a substantial burden on healthcare systems [1]. A 
+critical complication following AIS is hemorrhagic transformation (HT), wherein ischemic brain tissue undergoes 
+secondary bleeding. This process exacerbates neurological 
+defcits and elevates the risk of mortality [2]. This complication typically occurs following the reperfusion of cerebral 
+tissue, often due to thrombolytic therapies [3]. Therefore, accurate prediction of HT is crucial for optimizing therapeutic strategies and enhancing patient outcomes.
+The integration of artifcial intelligence (AI) into medical 
+research holds the potential to revolutionize the prediction 
+and management of stroke outcomes. Over the years, AI has 
+evolved signifcantly, transitioning from early rule-based systems to advanced machine learning (ML) and deep learning 
+(DL) algorithms [4]. AI encompasses the development of algorithms and computational models that mimic human cognitive 
+functions. Within AI, ML, and DL have emerged as powerful 
+tools in medical research, ofering the capability to analyze 
+vast amounts of data and identify patterns that traditional statistical methods may overlook [5]. Predictive models in stroke 
+medicine are designed to estimate the risk of complications 
+such as HT based on various patient-specifc factors. Traditional models have relied on clinical, radiological, and laboratory data; however, their predictive accuracy is often limited by the complexity and heterogeneity of stroke presentations. 
+This limitation underscores the need for more sophisticated 
+approaches capable of handling multifaceted data and extracting meaningful patterns. Examples of such scoring systems 
+include the Hemorrhage After Thrombolysis (HAT) score, the 
+Safe Implementation of Treatments in Stroke Symptomatic 
+Intracerebral Hemorrhage (SITS-SICH) risk score, and the 
+Stroke Prognostication using Age and National Institutes of 
+Health Stroke Scale-100 index (SPAN-100) [6].
+ML, a subset of AI, focuses on developing algorithms that 
+can learn from data and make predictions or decisions without 
+being explicitly programmed. ML techniques, such as support vector machines (SVM), random forests (RF), and logistic 
+regression, have been extensively applied in medical research 
+to predict clinical outcomes. These algorithms excel in supervised learning scenarios where labeled data is available for 
+training [5].
+DL, which falls under the broader category of ML, utilizes 
+a layered approach to analyze and learn from data [7]. This 
+enables it to identify intricate patterns and relationships within 
+datasets. Convolutional neural networks (CNNs) and recurrent 
+neural networks (RNNs) are prominent DL architectures. CNN 
+has proven to be especially efective in the analysis of medical 
+images and shows great potential in making clinical predictions based on imaging data [8]. RNNs are adept at handling 
+sequential data, making them suitable for time-series prediction tasks such as monitoring patient vital signs [9].
+Recent studies have shown a marked increase in the application of these algorithms in areas such as stroke research 
+[10, 11]. ML has been particularly successful in predicting 
+HT, as evidenced by various studies [12].
+Considering the life-threatening consequences of HT 
+after AIS, and the emergence of numerous ML and DL tools 
+designed to predict the risk of HT based on diferent inputs 
+this study aims to systematically review and evaluate these 
+predictive models. Our review will focus on comparing the 
+efcacy of these algorithms and, where feasible, benchmark 
+them against existing scoring systems. This comparison will 
+not only highlight the potential of ML and DL to enhance 
+predictive accuracy but also identify areas where these technologies could be refned for better integration into clinical 
+workfows. Ultimately, our review endeavors to underscore 
+the signifcance of leveraging cutting-edge technologies to 
+improve patient outcomes in AIS, setting the stage for future 
+innovations in stroke management Stroke remains a critical global health concern, ranking as the 
+second-leading cause of death and the third-leading cause of death and 
+disability combined, with mortality rates rising particularly in developing nations.1 Annually, 13.7 million new stroke cases are reported, 
+leading to approximately 5.5 million deaths.2 The outcome of a stroke is 
+significantly influenced by post-stroke complications, including 
+mobility-related falls, urinary tract infections (UTIs), pneumonia, and 
+psychological conditions.3,4 Among these, infections are prevalent in the 
+acute phase of stroke, with stroke-associated pneumonia affecting 5–44 
+% of stroke patients and serving as a major independent risk factor for poor outcomes and increased mortality.5–7
+Stroke patients face an elevated risk of hospital-acquired pneumonia 
+(HAP) due to factors such as stroke-induced immunodepression, the 
+severity of the stroke, advanced age, ICU admission, pre-stroke 
+disability, and dysphagia.8–10 HAP, commonly caused by pathogens 
+such as Enterobacteriaceae, Staphylococcus aureus, and Pseudomonas 
+aeruginosa,11 is often linked to aspiration and impaired reflexes 
+following a stroke.12,13 It contributes to poorer functional outcomes, 
+increased mortality within the first-year post-stroke, and prolonged 
+hospital stays.14,15 Preventing pneumonia is, therefore, essential for 
+improving patient outcomes. Recent predictive methods, including the 
+A2DS2 score combined with fasting hyperglycemia neutrophil-to-lymphocyte ratio (NLR), and biomarkers like transthyretin levels and neutrophil percentage to albumin ratio (NPAR), have 
+demonstrated effectiveness in early HAP prediction.7,16–18
+Advancements in machine learning (ML) and the widespread adoption of electronic health records (EHR) have enhanced the development 
+of predictive models for healthcare applications, including store management. ML models, such as the XGBoost model, have proven particularly efficient in predicting HAP among ischemic stroke patients. 
+Building on these advancements, this study seeks to develop a robust ML 
+model for the early prediction of HAP in stroke patients, addressing the 
+urgent need for preventive measures and improved clinical 
+outcomes.19–22
+Driven by advancements in machine learning models in healthcare 
+and the need for early prediction and prevention of HAP in stroke patients, our study aims to develop a machine learning model to predict 
+HAP early on Stroke is a universal health problem, and its impact is high
+on the scale of morbidity, mortality, and economic burden.
+The efficiency of stroke recovery is highly dependent on
+the prompt and accurate identification of stroke indicators. However, current technical methods of early diagnosis from
+facial images require specialized equipment and expert interpretation. Previous studies have applied machine learning
+techniques to this problem with varying degrees of success,
+but challenges remain in optimizing both the accuracy and
+interpretability of these models.
+Stroke death rate elevated from 38.8 per 100,000 people in
+2020 to 41.1 per 100,000 in 2021, according to a survey by the Center for Disease Control and Prevention [1]. Ischemic
+stroke affects 15 million people worldwide and financial and
+mental costs are high on families and communities, as stated
+in a report by the World Health Organization (WHO) of
+Eastern Mediterranean region [2]. Moreover, Close to 34% of
+global healthcare expenditure is spent on stroke [3]. In spite
+of the advancements in the medical field, early recognition of
+ischemic stroke remains challenging, particularly in remote
+or under-resourced areas.
+Stroke detection systems currently use Computed Tomography (CT) and Magnetic Resonance Imaging (MRI) scans
+but both can be expensive, time consuming and they might
+not be available in certain regions [4]. This issue is addressed
+in the proposed system which does so by analyzing facial
+images for asymmetries and other stroke related facial
+attributes in real time with the help of machine learning
+algorithms for facial landmark detection. It combines MediaPipe [5], which is a reliable facial landmark detection
+system, to extract facial landmarks. This approach not only
+decreases the cost of imaging devices but also enables quick,
+on-the-spot screening.
+Three sophisticated machine learning classification algorithms: Random Forest(RF), Extreme Gradient Boosting(XGB), and Catagorical Boosting(CB). The effectiveness
+of these models in detecting stroke symptoms based on facial
+features is thoroughly assessed.
+This paper introduces a novel approach to diagnosing
+facial palsy through the application of machine learning and
+computer vision techniques. Our primary contributions are as
+follows:
+• Comprehensive Dataset Collection and Augmentation: A diverse dataset of 1000 facial images (500
+with stroke symptoms, 500 without) is curated from
+publicly available sources, ensuring a balance between
+positive and negative cases. The models are made robust
+by applying data augmentation techniques: rotation,
+flipping, and scaling. The dataset is expanded in size
+to strengthen the model’s capability to pick out subtle
+stroke signs for other disparate demographic groups.
+• Advanced Facial Landmark Extraction: Using MediaPipe Face Mesh, 228 key facial landmarks are
+selected out of the available 468 by focusing on
+regions most indicative of stroke or facial palsy-related
+anomalies. This refined method aims to minimize
+computational overhead while maximizing diagnostic
+relevance, by isolating those face areas indicated for
+stroke: asymmetry or drooping [6].
+• Intense Model Optimization Techniques: The baseline models are thoroughly optimized using Ray Tune,
+Randomized Search, and Grid search in order to find
+the best performing hyperparameters. In particular, these
+techniques are use iteratively and are additionally fine
+tuned through manual calibration, post optimization.
+This leads to more performance and stability.
+• Multimodal Voting Classifier: Through combining
+the strengths of RF, XGB, and CB models, a robust Multimodal Voting Classifier (MVC) is created. This
+ensemble technique improves predictive performance by
+utilizing the best features of each model, which lead to
+increased accuracy and reliability in stroke detection.
+• Performance Evaluation and Validation: The model
+goes through intense testing across various datasets. Its
+effectiveness is validated by key performance indicators
+such as accuracy sensitivity and specificity.
+• Explainable AI (XAI) Integration: By emphasizing
+the importance of particular face regions in stroke
+detection, XAI approaches offer transparency and
+enable medical practitioners to validate the model’s
+conclusions. Feature importance techniques for RF,
+XGB, and CB further refine the model by identifying
+the most effective facial landmarks.
+• Dimensionality Reduction using t-SNE: t-Distributed
+Stochastic Neighbor Embedding (t-SNE) is employed
+for dimensionality reduction and visualization of highdimensional data. This technique facilitates the interpretation of complex datasets and enhances the clarity of the
+classification process.
+• Real-time Performance of the model: Real-time
+performance evaluation is important for evaluating
+the robustness of machine learning models in clinical
+contexts. In the study, Python based Graphical User
+Interface(GUI) is used to deploy the proposed MVC in
+a python application to process user input images to
+diagnose stroke while measuring different performance
+metrics such as the preprocessing time, inference time,
+and the total time taken. By testing on a range of
+hardware systems, the analysis highlights the model’s
+adaptability, efficiency, and feasibility for the implementation into real-world workflows, ensuring reliability in
+time-sensitive scenarios.
+The rest of the paper is organized as follows: Section II
+presents the literature review, Section III details the methodology, Section IV includes the experimental results analysis,
+section V describes the discussion of the study and finally,
+section VI concludes the results"this is the introduction part of 2025 yeara paper's"
+1.1. Current stratification tools for stroke risk.
+Stroke represents the second leading cause of death worldwide, affecting approximately 15 million individuals per year [1]. Several risk
+factor scores are currently available to clinicians to stratify stroke risk
+and guiding clinical decision making. These include, the CardiovascularRisk-Score-3 (QRISK3), CHA2DS2-VASc and until recently, the ABCD2
+score which predicts stroke risk following a transient ischaemic attack (TIA) [2–4]. The receiver-operator-characteristic-area-under-curve
+(ROC-AUC) of these tools range from 0.67 to 0.76 and have proven
+useful in the clinical setting, however 25–30 % of people who suffer
+stroke have no known risk factors [5]. Indeed, there is a need for
+improvement of these risk scores. CHA2DS2-VASc has been criticised for
+its poor specificity [6], which is an important consideration since the use
+of anticoagulants carries a significant risk of bleeding [7]. The QRISK3
+score has been criticised for underestimating cardiovascular risk and the
+ABCD2 score has demonstrated poor sensitivity and specificity, hence it
+is no longer recommended in UK guidelines by National-Institute-ofHealthcare-Excellence (NICE) [8].
+These limitations can be attributed to a number of factors. Firstly,
+most of these models are not generalisable to the average population and
+are instead targeted for use in those with a history of atrial fibrillation
+(AF) or transient-ischaemic-attack (TIA) [6]. Secondly, their scoring
+tools exclude several risk factors for stroke, such as smoking, obesity and
+a family history of stroke. These variables were excluded due to their
+relative lack of significant effect during construction of these instruments [9]. However, these variables remain clinically relevant and
+collectively explain a significant proportion of stroke risk [10]. Also,
+their reliance on established epidemiological risk factors may exclude
+novel stroke risk factors which may be found by analysis of other data
+sources, such as imaging and laboratory tests. Thirdly, dichotomization
+of risk variables to present or absent (rather than a continuous spectrum)
+and not including interactions between variables, sacrifices the predictive power of models [11]. Finally, these models aim to predict the risk
+of only ischaemic stroke. Despite the existence of known risk factors for
+haemorrhagic stroke, no instrument currently predicts the risk of haemorrhagic stroke [12]. These issues highlight the unmet need for the
+development of models that are able to accurately predict the risk of
+both haemorrhagic and ischaemic stroke amongst patients with and
+without a history of AF, TIA and/or cardiovascular disease. One such
+field that shows promise in the development of such models is artificialintelligence (AI).
+1.2. Artificial-intelligence
+AI involves the process of perceiving, processing, and inferring information by machines or computer programs [13]. In the last decade
+we have begun to see the capabilities of AI in impacting and improving
+patient care, both in the context of stroke and other disease areas. Examples include e-ASPECTS (Brainomix limited), which is able to successfully identify possible candidates for thrombolysis and/or
+thrombectomy [14] by interpreting computerised-tomography (CT)
+brain scans and “InnerEye (Microsoft)” which processes radiological
+investigations, identifying likely cancers and creating radiotherapy
+plans for patients [15].
+Today, large and varied datasets of routinely collected medical data
+are readily available, which act as an attractive substrate for understanding the unexplained factors and/or interaction of factors driving
+stroke risk.
+Within these large datasets exists a wealth of variables. These variables are able to influence a given outcome directly, or indirectly as a
+result of complex interactions between one-another. In some cases, AI is
+capable of analysing these complex interactions and gaining insight into
+how variables within a dataset interact and affect the overall outcome
+[16]. This enables identification of both major and minor risk factors for
+stroke and an understanding of how these factors interact with each
+other to influence overall risk.
+AI may therefore be invaluable in building a comprehensive tool to
+predict stroke risk and guide clinical decision making.
+Of the various categories of AI that exist, machine learning (ML) is
+the most commonly used in predictive modelling within the healthcare
+setting. ML is a subcategory of AI in which algorithms learn to improve
+their performance through exposure to data alone [16]. Supervised
+learning (SL) is the branch of ML which is most relevant to predictive modelling. SL uses labelled datasets to train algorithms to accurately
+classify data and predict outcomes. It is the technology with most
+applicability to predictive modelling of stroke [16]. Several SL methods
+exist. Table 1 lists the most commonly used SL methods for predicting
+the risk of stroke from routine hospital data.
+Because many SL models are capable of providing insight into variable importance, certain SL models are well suited to disease prediction
+and prognosis, novel risk factor identification, drug discovery, medical
+image analysis and disease diagnosis. They are hence often the models of
+choice for predicting the risk of stroke, however they require accurately
+labelled and organised datasets, and have been criticised for a lack of
+generalisability within medical research [17]. In this paper we provide
+an overview of the current research using supervised ML to predict
+stroke risk and identify novel risk factors for stroke.
+1.3. Aims
+Our aims are outlined as follows:
+1. To evaluate the effectiveness of ML in predicting stroke risk and
+identifying novel risk factors for stroke in patients with and without AF.
+2. To identify and suggest areas of methodological improvement
+when building ML models to predict stroke risk.
+3. To identify areas of future study in using ML to predict stroke risk.
+2. Materials and methods
+This systematic review was conducted in accordance with guidelines
+outlined by Preferred-Reporting-Items-for-Systematic-Reviews-andMeta-Analyses (PRISMA) [18].
+Data search
+2.1. Search protocol
+A PUBMED search was used to identify relevant full-text research
+articles. The following search input was used: ((((machine learning) OR
+(artificial intelligence) OR (deep learning) OR (Supervised learning)))
+AND ((stroke) OR (ICH) OR (intracerebral haemorrhage)). This returned
+articles dated between January 1st 1982 and December 1st 2024.
+Searches were limited to studies involving humans. No region or language limitations were applied.
+2.2. Study selection
+This review focused on studies evaluating the efficacy of ML in
+predicting the risk of future stroke from routine hospital data. This
+included demographics, past medical history, ECG, biochemistry, carotid doppler and physiological parameters.
+Inclusion and exclusion criteria are summarised in Appendix 1,
+Table 6. Studies were confined to those that included human participants ≥18 years and used at least one ML to predict the future risk of
+haemorrhagic or ischaemic stroke. Since we focused on identifying articles to stratify stroke risk, case-control, cohort and randomisedclinical-control (RCT) studies were included, but cross-sectional
+studies were excluded due to their lack of temporal data.
+Search results were uploaded to Rayyan software [19]. Duplicate
+studies were removed. Relevant studies were then identified by
+screening abstracts and titles against predefined inclusion and exclusion
+criteria. The full texts of the identified studies were then again screened
+against inclusion/exclusion criteria (Appendix 1). A selection of studies
+were then independently reviewed by two researchers. Relevant data
+and findings were manually extracted and presented in Tables 2, 3, 4
+and 5.Stroke is a devastating cerebrovascular event that results in
+significant morbidity and mortality worldwide. It is a leading cause
+of long-term disability and imposes a substantial burden on
+healthcare systems. Timely identification of individuals at risk of
+stroke plays a crucial role in implementing preventive measures
+and improving patient outcomes. With advances in machine
+learning and predictive analytics, there has been a growing interest
+in using these techniques to develop accurate stroke prediction
+models. In recent years, machine learning algorithms1,2 have
+demonstrated great potential in various medical domains,
+including cardiovascular risk assessment. These algorithms can
+analyze large datasets, identify complex patterns, and extract
+valuable insights that may not be readily apparent to human observers. Moreover, machine learning models can integrate multiple clinical parameters and risk factors to generate personalized
+risk scores, aiding in individualized patient management. In this
+work, we present a comprehensive study on stroke prediction using a range of machine learning techniques. We investigate the
+performance of Naive Bayes (NB), logistic regression (LR), support
+vector machine (SVM), K-nearest neighbors (KNN), decision tree
+(DT), random forest (RF), XGBoost (Extreme Gradient Boost), and
+neural network (NN) models.3 These algorithms are known for
+their ability to handle diverse data types and nonlinear relationships, and exhibit robust predictive capabilities. Clinical applicability and interpretability require the use of specific techniques.4,5
+The hyperparameters that characterize the structure of neural
+networks create complex functions from the input that can
+approximate observed outcomes with minimal error. Additionally,
+we emphasize the significance of accurate stroke prediction in
+facilitating early identification and intervention. Such proactive
+interventions can significantly reduce the incidence and severity of
+strokes, ultimately leading to improved patient outcomes.6 Our research contributions are as follows:
+(1) The Healthcare-dataset-stroke-data.csv data are analyzed.
+This dataset is used to predict whether a patient is likely to
+suffer a stroke based on input parameters such as gender,
+age, various diseases, and smoking status. Each row in the
+dataset provides relevant information about the patient. A
+total of 12 attributes are considered for stroke prediction.
+(2) The dataset is examined using eight machine learning classifiers, namely NN, NB, LR, SVM, KNN, DT, RF, and XGBoost
+and various performance metrics are calculated.
+(3) A comprehensive comparison of all eight machine learning
+classifiers is performed using the precision, recall, and Fmeasure.
+The remainder of this paper is organized as follows. Section 2
+briefly introduces some related work on machine learning-based
+heart stroke detection and prediction. Section 3 describes the
+experimental setup and dataset and explains the methodology.
+Section 4 presents the results and outcomes using the various
+machine learning algorithms, before Section 5 presents a comparative evaluation of the various techniques. The conclusions and
+limitations of this study and areas for potential future work are
+summarized in Section 6.We must employ technology as it develops in fields like healthcare to address pressing issues. Strokes were unity 
+of the furthermost recurrent reasons of demise in former years, Due to their effects on the human central nervous 
+system. We can utilize deep learning algorithms to detect stroke in its early phases in order to address problems 
+like stroke. Therefore, the death rate from strokes can be decreased with sophisticated picture recognition and 
+categorization. The Prediction model is used in this study to predict stroke risk in older individuals and those who 
+are at increased risk of stroke due to a variety of variables, such as addiction. The same project may be expanded 
+in the future to provide the stroke percentage based on project output.[1] Due to its exceptional lenient material 
+divergence, the MRI has converted the mode of optimal for medical appraisal of ischemic stroke abrasions. Aimed 
+at quantitative scrutiny of stroke laceration in MRI metaphors, skillful physical dissection tranquil assists as 
+mutual tactic to total the dimensions, figures and bulks of stroke abrasions. Though, it is monotonous and time
+consuming chore and is non-reproducible. Consequently, the expansion of abundantly auto- mated and precise 
+stroke abrasion dissection procedures partakes converted vigorous examine field.[2] Stroke is predictable as an 
+important cerebrovascular ailment, foremost to the second main feature of infirmity and demise wide-reaching, 
+which occasioned in a universal significant pecuniary drain (roughly 34 billion dollars per year). Stroke can be 
+alienated hooked on ischemic stroke (which described for more than 87% of all stroke affected role) and 
+hemorrhagic stroke. The period space for giving stroke ailment action in the critical stage is mostly 6 hours after 
+inception. Consequently, it entails speedy verdicts and suitable interferences from clinicians Neuroimaging 
+procedures (counting CT and MRI) have converted vital tactic to critical stroke discovery, depiction, and 
+prognosis. [3] Cerebral aneurysms are bulges in cerebral blood vessels that can leak or rupture, causing 
+subarachnoid hemorrhage (SAH). An unruptured intracranial aneurism is an abnormal focal expansion of an artery 
+in the brain caused by the weakening of the vascular wall. Approximately 3% of healthy adults have an intracranial 
+aneurysm1. Aneurysms account for 85% of all SAHs, with an average mortality rate of 51%, and one-third of 
+survivors have long-term disabilities[4], The Introduction Procedures that integrate quantifiable scrutinizes will 
+add to the outdated pictorial scrutiny of metaphors. An imperative phase in the doppelgänger examination channel 
+is the functional dissection of regions of interest, for example, significant a bulk of irregular material from a 
+contextual of regular material. This will permit for numerical scrutiny of topographies that is non noticeable by 
+humanoid perception. For example, the arena of radiomics is reckless rising as a technique of envisaging existence periods from tomography structures such as figure of a bulk of attention and quality and passion of the voxel 
+environment. With the expansion of these procedures comes a superior need for computerized segmentation.[5]
+PROBLEM STATEMENT 
+Brain strokes pose a critical health challenge globally due to their high mortality and disability rates. Current 
+diagnostic methods rely on manual interpretation of medical imaging, leading to time-consuming processes and 
+variability in results among healthcare providers. The pressing issue lies in the prerequisite for computerized 
+schemes that can precisely identify and distinguish between stroke and non-stroke conditions without human 
+intervention.
+OBJECTIVE OF THE STUDY 
+• Create and implement an automated system for identifying brain strokes using Convolutional Neural 
+Networks (CNNs).
+• Provide an interface for users to upload and analyze brain images 
+• Enhance clinical decision-making by providing reliable stroke diagnoses.
+Advancements in technology are leading to an increase in the average lifespan of humans. One of the predictors
+of physical inactivity is the increasing use of technology in daily life, such as computers, cellphones, and portable
+gadgets. In addition to the aging population, the younger generation is also facing various health problems as a
+result of their poor lifestyle, such as diabetes, hypertension, cardiovascular disease, and strokes. To track people’s
+health using biomarkers and non-intrusive smart techniques, smart medical equipment is necessary [1].
+In recent years, stroke has been a significant problem that affects people’s health. A stroke, often referred to
+as a cerebrovascular accident, is a neurological condition that can be caused by ischemia or hemorrhage of the
+brain arteries. Typically, it results in a variety of physical and cognitive deficits that impede function [2]. Every year, almost 16 million people have a stroke, which is associated with high socioeconomic costs. The use of
+machine learning has advanced and expanded tremendously in recent years in a variety of healthcare systems.
+Blood clotting is the primary manifestation of stroke, which disrupts blood flow to brain neurons. There are
+several stroke levels. Although major strokes can be deadly, minor strokes affect the blood supply to specific
+parts of the brain. A stroke is a medical emergency that needs to be handled with care. Moving difficulties,
+disorientation, poor verbal communication, and difficulty understanding are common symptoms. Stroke
+causes permanent neurological damage and death [3]. Ischemic and hemorrhagic strokes are the two types of
+strokes. An ischemic embolic stroke occurs when a blood clot narrows the arteries that supply the brain rather
+than the brain itself. Approximately 13% of stroke cases are hemorrhagic strokes. The rupture of a cerebral
+blood artery causes these strokes. The most common type of stroke is ischemic. Hemorrhagic strokes are also
+called intracerebral hemorrhages, or ICH. An ICH occurs when a blood artery breaks and blood accumulates in
+the tissue surrounding the artery. This causes blood loss in surrounding tissues and puts pressure on the brain.
+Getting medical assistance as soon as possible is essential for the best chance of recovery. Prevention is also very
+important. If you control your risk factors, you can greatly reduce your chance of having a stroke of any type [4].
+In India, stroke is becoming more prevalent; it is currently the fifth most common cause of disability and the
+fourth leading cause of death. Previous research has suggested that the annual incidence of stroke in India is
+between 105 and 152 incidents per 100,000 people [5]. Stroke affects an estimated 800,000 Americans each year.
+Since 600,000 people have had strokes for the first time, 200,000 more will get one. This suggests that in the US, a
+stroke occurs every 40 seconds. The stroke death rate is 3.5 minutes(CDC web page) [6]. Stroke deaths have been
+10 times higher in developing nations since 1970, and are expected to treble globally by 2030. Magnetic
+resonance imaging (MRI) and computed tomography (CT) are commonly used in studies to identify strokes.
+Furthermore, due to the excessive costs associated with MRI and CT scans, people in underdeveloped nations
+cannot access the benefits of these diagnostic instruments[7]. Although MRI does not involve ionizing radiation
+and is generally safer in terms of allergic reactions, its high cost and limited availability can hinder its use in
+certain regions. CT scans, though more accessible, involve ionizing radiation and can pose risks to some
+patients, such as allergic reactions to contrast agents. In this paper, we present a system for the identification of
+brain stroke patients which is based on filling missing data algorithms and machine learning models. To achieve
+this goal, we experiment with several machine learning models and fill in missing values strategies to attain this
+goal. The key contributions of this work are summarized below:
+• Preprocessing of data including imputation of missing values using mean and interpolation spline curves.
+Also, solve the problem of data imbalance.
+• Analyze the loadings(eigenvectors) of each principal component in order to determine the primary
+contributions of the original characteristics to each new component.
+• We propose a new framework for brain stroke identification that takes advantage of both bagging and
+boosting as base learners, combining their complementary strengths to enhance model performance and
+compare with a single classifier.
+• Compare the performance of various classifiers after employing different data imputation techniques such as
+mean and interpolation spline curves.
+The remainder of the paper is organized as follows. Section 2 presents a comprehensive review of the literature.
+Section 3will describe the methodology used. In sections 4 and 5 a discussion of the results and conclusion will
+be presented"this is the introduction part of 2025 yeara paper's"
+Stroke continues to be one of the leading global causes of death (6 million per year) according to recent data from 1999 to 2024 and disability due to its abrupt disruption of cerebral blood flow, which results in cell death.  Prediction models now in use confront three major obstacles: (1) inadequate clinical data, (2) extreme class imbalance, and (3) physicians' inability to interpret the models.  Three strategies are used in our system to address these limitations: thorough evaluation of 10 ML models using robust metrics (AUC-ROC/F1-score), explainable AI (XAI) with compelling visuals, and advanced data preprocessing to guarantee quality.  This integrated system improves stroke risk assessment's clinical utility and prediction accuracy."now write introduction smartly and standardly for the journal paper  with all recent information all cite for 2025 paper with  paragraph."
