@@ -1,0 +1,1 @@
+optimize table to reduce shape. cause it is for conference paper
